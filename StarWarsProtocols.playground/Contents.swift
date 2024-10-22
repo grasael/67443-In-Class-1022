@@ -54,5 +54,116 @@ struct DarthTyrannous {
 /*:
  Place your refactored structs below:
  */
+protocol Jedi {
+    func lightSaberSkill() -> Int
+    func telekinesis() -> Int
+    func prescience() -> Int
+    func introspection() -> String
+}
 
+extension Jedi {
+    func lightSaberSkill() -> Int {
+        return 8
+    }
+    
+    func telekinesis() -> Int {
+        return 5
+    }
+    
+    func prescience() -> Int {
+        return 5
+    }
+    
+    func introspection() -> String {
+        return "Search your feelings."
+    }
+}
 
+struct MasterYodaRefactored: Jedi{
+    func mindControl() -> String { return "Do or do not." }
+}
+
+struct MasterObiWanRefactored: Jedi{
+    func mindControl() -> String { return "These are not the droids you're looking for." }
+}
+
+struct MasterQuiGonRefactored: Jedi{
+    func mindControl() -> String { return "Republic credits will do." }
+    func introspection() -> String { return "Feel, don’t think. Trust your instincts." }
+}
+
+protocol Sith {
+    func lightSaberSkill() -> Int
+    func telekinesis() -> Int
+    func prescience() -> Int
+    func forceChoke() -> Bool
+    func forceLightning() -> Bool
+}
+
+extension Sith {
+    func lightSaberSkill() -> Int {
+        return 8
+    }
+
+    func telekinesis() -> Int {
+        return 5
+    }
+
+    func prescience() -> Int {
+        return 5
+    }
+    
+    func forceChoke() -> Bool {
+        return false
+    }
+
+    func forceLightning() -> Bool {
+        return false
+    }
+}
+
+struct DarthVaderRefactored: Sith {
+    func lightSaberSkill() -> Int {
+        return 9
+    }
+    
+    func telekinesis() -> Int {
+        return 8
+    }
+    
+    func forceChoke() -> Bool {
+        return true
+    }
+    
+    func forceLightning() -> Bool {
+        return false
+    }
+}
+
+struct DarthSidiousRefactored: Sith {
+    func telekinesis() -> Int {
+        return 7
+    }
+    
+    func prescience() -> Int {
+        return 6
+    }
+    
+    func forceChoke() -> Bool {
+        return true
+    }
+    
+    func forceLightning() -> Bool {
+        return true
+    }
+}
+
+struct DarthTyrannousRefactored: Sith {
+    func forceChoke() -> Bool {
+        return false
+    }
+    
+    func forceLightning() -> Bool {
+        return true
+    }
+}
